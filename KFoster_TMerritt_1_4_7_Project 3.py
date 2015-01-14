@@ -36,3 +36,7 @@ def frame_all_images(directory=None):
     image_list, file_list = get_images(directory)
     for n in range(len(image_list)):
         filename, filetype = file_list[n].split('.')
+        
+        new_image = frame_all_images(image_list[n],.30)
+        new_image_filename = os.path.join(new_directory, filename + '.png')
+        new_image.save(new_image_filename)
